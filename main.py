@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 import uvicorn 
 import requests
-import json
 
 app = FastAPI()
 
@@ -36,3 +35,11 @@ async def PlacaPatente(placa:str):
 
 if __name__=="__main__":
 	uvicorn.run("main:app",port=3000,reload=True)
+
+"""
+Hay 2 formas de iniciar una app de FastApi.
+	1- uvicorn main:app, la cual se le puede especificar --host, --port, --reload... etc.
+	2- if __name__=="__main__":
+			uvicorn.run("main:app",port=3000,reload=True)
+		Se le especifica los parametros y asi se evita estar ejecutando el archivo por consola despues de los cambios.
+"""
